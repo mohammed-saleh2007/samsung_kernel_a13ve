@@ -13,6 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: set variables
+      run: export CROSS_COMPILE=$(pwd)/toolchain/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-androidkernel- \
+           export CC=$(pwd)/toolchain/clang/host/linux-x86/clang-r383902/bin/clang \
+           export CLANG_TRIPLE=aarch64-linux-gnu- \
+           export CROSS_COMPILE=aarch64-linux-gnu- \
+           export ARCH=arm64 \
+           export ANDROID_MAJOR_VERSION=u \
+           export KBUILD_BUILD_USER=sudoWTF \
+           export KBUILD_BUILD_HOST=archlinux \
+           export KCFLAGS=-w \
+           export CONFIG_SECTION_MISMATCH_WARN_ONLY=y \
     - name: set permissions
       run: chmod +rwx build_kernel.sh
     - name: run building script 
