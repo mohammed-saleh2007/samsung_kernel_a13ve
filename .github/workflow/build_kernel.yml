@@ -1,0 +1,19 @@
+name: Build Kernel CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: run building script 
+      run: ./build_kernel.sh
+    - name: list fils
+      run: ls ./arch/arm64/boot
