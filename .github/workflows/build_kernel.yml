@@ -18,4 +18,4 @@ jobs:
     - name: run building script 
       run: bash ./build_kernel.sh
     - name: list fils
-      run: ls ./arch/arm64/boot
+      run: ls $(pwd)/arch/arm64/boot/
