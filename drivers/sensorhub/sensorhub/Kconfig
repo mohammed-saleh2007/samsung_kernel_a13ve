@@ -1,17 +1,18 @@
 config SHUB_MODULE
-    tristate "SHUB module"
-    default n
+	tristate "shub module"
+	default n
 
 config SHUB_FIRMWARE_DOWNLOAD
-    tristate "Sensor hub firmware download"
-    default n
+	tristate "Sensor hub firmware download"
+	default n
 
 config SHUB_AP_STATUS_CMD
-    tristate "Sensor hub AP status command"
-    default n
-    help
-      If you say yes, send command to sensor hub when AP suspends or resumes.
+	tristate "sensor hub at status command"
+	default n
+	help
+		if you say yes, send command to sensorhub when ap suspend or resume
 
 config SHUB_SPU
-    tristate "Sensor hub SPU firmware download"
-    default n
+	tristate "Sensor hub spu firmware download"
+	default n
+
