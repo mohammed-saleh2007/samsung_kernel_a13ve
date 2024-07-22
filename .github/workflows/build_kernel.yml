@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: set permissions
-      run: find . -exec sudo chmod +rwx {} ; \
+      run: find . -exec sudo chmod +rwx  {} \;
     - name: run building script 
       run: bash ./build_kernel.sh
     - name: list fils
