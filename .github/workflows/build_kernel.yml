@@ -1,0 +1,22 @@
+name: Build Kernel CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: set permissions
+      run: chmod +rwx build_kernel.sh
+    - name: run building script 
+      run: bash ./build_kernel.sh
+    - name: list fils
+      run: ls $(pwd)/arch/arm64/boot/
+      
