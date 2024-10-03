@@ -40,4 +40,4 @@ jobs:
         body: |
           Build: ${{ inputs.MANIFEST_BRANCH }}
           Device: a13ve
-          Commit: see the repo
+          Commit: see the repo - i hope it works
