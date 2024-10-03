@@ -34,7 +34,7 @@ jobs:
       uses: softprops/action-gh-release@master
       with:
         files: |
-          $(pwd)/arch/arm64/boot/Image
+          arch/arm64/boot/*
         name: Unofficial kernel for a137f // ${{ env.BUILD_DATE }}
         tag_name: ${{ github.run_id }}
         body: |
