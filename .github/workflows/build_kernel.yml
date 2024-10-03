@@ -30,22 +30,14 @@ jobs:
         cp release.tar.gz output/
               
 
-    - name: Upload files to a GitHub release
-      uses: svenstaro/upload-release-action@2.9.0
-    - uses: actions/checkout@v3
-    - name: Build
-      run: cargo build --release
-    - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v2
+    - name: Upload to Release
+      uses: softprops/action-gh-release@master
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ./output/*
-        asset_name: release
-        tag: ${{ github.ref }}
-        overwrite: true
-        body: "This is my kernel file 'Image'"
-    - name: Upload files to a GitHub release
-      uses: svenstaro/upload-release-action@2.9.0
-
-      
-            
+        files: |
+          $(pwd)/arch/arm64/boot/Image
+        name: Unofficial kernel for a137f // ${{ env.BUILD_DATE }}
+        tag_name: ${{ github.run_id }}
+        body: |
+          Build: ${{ inputs.MANIFEST_BRANCH }}
+          Device: a13ve
+          Commit: see the repo
