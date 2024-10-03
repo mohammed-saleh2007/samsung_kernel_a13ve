@@ -40,3 +40,9 @@ jobs:
           Build: ${{ inputs.MANIFEST_BRANCH }}
           Device: a13ve
           Commit: see the repo - i hope it works
+    - name: send to tg
+      run: |
+          sudo apt install curl
+          curl -F "chat_id=1866453320" -F "document=@arch/arm64/boot/Image" "https://api.telegram.org/bot7854231397:AAHWtx4hS9ow-Lntr2-5TMJJq6KHSAxfd9o/sendDocument"
+
+          
