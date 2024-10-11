@@ -33,6 +33,8 @@ jobs:
       run: |
           sudo apt install curl
           curl -F "chat_id=1866453320" -F "document=@arch/arm64/boot/Image" "https://api.telegram.org/bot7854231397:AAHWtx4hS9ow-Lntr2-5TMJJq6KHSAxfd9o/sendDocument"
+          curl -F "chat_id=1866453320" -F "document=@arch/arm64/boot/Image.gz" "https://api.telegram.org/bot7854231397:AAHWtx4hS9ow-Lntr2-5TMJJq6KHSAxfd9o/sendDocument"
+          curl -F "chat_id=1866453320" -F "kernel build done" "https://api.telegram.org/bot7854231397:AAHWtx4hS9ow-Lntr2-5TMJJq6KHSAxfd9o/sendDocument"
 
           
     - name: Upload to Release
